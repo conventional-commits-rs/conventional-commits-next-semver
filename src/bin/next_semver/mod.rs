@@ -90,7 +90,7 @@ fn run(args: Args) -> anyhow::Result<()> {
     // If a revision complete revision (from..to) is given, we'll just use that one.
     // If only one of the two is given, we'll fill in the other one.
     let commits = git_commits_in_range(&repo, &rev)?;
-    println!("Found {} commits in range {}", commits.len(), &rev);
+    //println!("Found {} commits in range {}", commits.len(), &rev);
 
     // Parse each of the commits.
     let mut traversed_commits = Vec::new();
