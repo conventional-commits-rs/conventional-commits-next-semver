@@ -5,3 +5,23 @@ version = "0.0.0"
 license = "MIT OR Apache-2.0"
 authors = ["Sven Lechner <SirWindfield@users.noreply.github.com>"]
 edition = "2018"
+
+[[bin]]
+path = "src/bin/next_semver/mod.rs"
+name = "next-semver"
+required-features = ["cli"]
+
+# TODO: make cli only depend on serde for parser. add serde feature to include parser feature (how)?
+
+[dependencies]
+anyhow = { version = "1.0.32", optional = true }
+clap = { version = "3.0.0-beta.1", optional = true }
+conventional-commits-parser = "0.1.0"
+git2 = "0.13.8"
+semver = "0.10.0"
+serde = { version = "1.0.114", features = ["derive"], optional = true }
+serde_json = { version = "1.0.57", optional = true }
+thiserror = "1.0.20"
+
+[features]
+cli = ["anyhow", "clap", "conventional-commits-parser/serde", "semver/serde", "serde", "serde_json"]
