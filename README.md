@@ -1,29 +1,24 @@
-# zerotask-rust-lib-template
+# conventional-commits-next-semver
 
+[![Maintenance](https://img.shields.io/badge/maintenance-actively%20maintained-brightgreen.svg)](https://github.com/conventional-commits-rs/conventional-commits-parser)
+[![crates.io](https://img.shields.io/crates/v/conventional-commits-next-semver.svg)](https://crates.io/crates/conventional-commits-next-semver)
+[![crates.io](https://img.shields.io/crates/d/conventional-commits-next-semver)](https://crates.io/crates/conventional-commits-next-semver)
+[![Documentation](https://docs.rs/conventional-commits-next-semver/badge.svg)](https://docs.rs/conventional-commits-next-semver)
 [![docs_master_badge]][docs_master_url]
 
-> A GitHub template for Rust libraries.
+> A binary and library for determining the next semantic version of a project.
 
-## Features
+## Installation
 
-- Continuous Integration through GitHub Actions
-  - Each PR is tested by running the following commands to ensure that only working code is added to the repository:
-    - `cargo fmt` to ensure uniform source code formatting.
-    - `cargo clippy` to use more idiomic Rust code, optimize code as well as prevent hard to spot bugs.
-    - `cargo check` to ensure that the library compiles properly.
-    - `cargo test` to ensure that the library works as expected.
-  - Each push to master triggers the following:
-    - Generation of the newest documentation that gets pushed to the `gh-pages` branch.
-- MSRV (**M**inimal **s**upported **R**ust **v**ersion)
-  - Kept in sync with the latest available Rust version on Ubuntu.
-- Opinioded `rustfmt` configuration file.
-- Misc
-  - `.editorconfig` file for code-unrelated files.
-    - Ensures proper formatting for workflow files and other configuration files.
+The library can be added to your project as usual. If you want to install the binary, then please run this command:
+
+```text
+cargo install --features cli conventional-commits-next-semver
+```
 
 ## Current Properties
 
-- MSRV: 1.41.0
+- MSRV: 1.41.0 (tested)
 
 ## License
 
