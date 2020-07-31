@@ -31,9 +31,9 @@ pub fn git_commits_in_range<'a>(
 /// [latest_semver_compatible_git_tag_with_pattern](fn.
 /// latest_semver_compatible_git_tag_with_pattern.html) that uses this pattern:
 /// `v*`.
-pub fn latest_semver_compatible_git_tag<'a>(
-    repo: &'a Repository,
-) -> Result<SemverCompatibleGitTag, Error<'a>> {
+pub fn latest_semver_compatible_git_tag(
+    repo: &Repository,
+) -> Result<SemverCompatibleGitTag, Error> {
     latest_semver_compatible_git_tag_with_pattern(repo, Some("v*"))
 }
 
@@ -58,7 +58,7 @@ fn latest_semver_compatible_git_tag_with_pattern<'a>(
         .iter()
         .flatten()
         .map(|v: &str| {
-            let trimmed = v.trim_start_matches("v");
+            let trimmed = v.trim_start_matches('v');
             (v, trimmed)
         })
         .map::<Result<(&str, Version), SemVerError>, _>(|(tag, semver)| {

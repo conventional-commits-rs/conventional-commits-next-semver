@@ -28,7 +28,7 @@ pub fn increment_minor(current_version: Version) -> Version {
 
 /// Increments the semver patch version.
 pub fn increment_patch(current_version: Version) -> Version {
-    let mut cloned_version = current_version.clone();
+    let mut cloned_version = current_version;
     cloned_version.increment_patch();
     cloned_version
 }

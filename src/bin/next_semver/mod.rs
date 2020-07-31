@@ -157,8 +157,7 @@ fn run(args: Args) -> anyhow::Result<()> {
 
 fn main() {
     let args: Args = Args::parse();
-    let res = run(args);
-    if res.is_err() {
-        eprintln!("Error while executing: {:?}", res.unwrap());
+    if let Err(e) = run(args) {
+        eprintln!("Error while executing: {:?}", e);
     }
 }
