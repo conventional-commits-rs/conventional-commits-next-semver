@@ -1,6 +1,6 @@
 [package]
 name = "conventional-commits-next-semver"
-description = "A library for detecting the next semver version based on conventional-commits commit messages"
+description = "A binary and library for detecting the next semver version based on conventional-commits commit messages"
 version = "0.0.0"
 homepage = "https://github.com/conventional-commits-rs/conventional-commits-next-semver"
 license = "MIT OR Apache-2.0"
